@@ -61,6 +61,11 @@ export const Fretboard: React.FC<FretboardProps> = ({
   return (
     <div className="fretboard__container">
       <table className="fretboard__frets-table">
+        <tr>
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((fretNumber) => (
+            <td key={`fretNumber-${fretNumber}`}>{fretNumber}</td>
+          ))}
+        </tr>
         {strings.map((notes, stringIndex) => (
           <tr key={`string-${stringIndex}`}>
             {notes.map((noteIndex, fretIndex) => (
