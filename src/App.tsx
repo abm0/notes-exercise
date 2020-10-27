@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { WelcomeMessage } from "./components/Welcome";
-import { Excercise } from "./components/Excercise";
+import { Exercise } from "./components/Exercise";
 
 import "./App.css";
 
@@ -12,7 +12,7 @@ function App() {
       {started ? (
         <WelcomeMessage onButtonClick={() => setStarted(true)} />
       ) : (
-        <Excercise />
+        <Exercise />
       )}
     </div>
   );

@@ -1,12 +1,37 @@
+/* TODO: добавить css-модули и postcss */
 body {
   text-align: center;
 }
 
-.excercise__answers-list {
+.exercise__header {
+  padding: 30px 0;
+}
+
+.exercise__answers-list {
   list-style: none; 
   padding: 0;
 }
 
-.excercise__answers-list-item {
+.exercise__active-note {
+  font-weight: bold;
+}
+
+.exercise__answers-list-item {
   display: inline-block;
+}
+
+.list-item_wrong button {
+  background-color: palevioletred;
+}
+
+.list-item_correct button {
+  background-color: palegreen;
+}
+
+.keyboard__container {
+
+}
+
+.fretboard__container {
+  
 }
