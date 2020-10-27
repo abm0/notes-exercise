@@ -67,16 +67,6 @@ export const NotesList: React.FC<AnswerListProps> = ({
     ]
   );
 
-  const checkIfCorrect = useCallback(
-    (index: number) => correctNotesIndex.includes(index),
-    [correctNotesIndex]
-  );
-
-  const checkIfWrong = useCallback(
-    (index: number) => wrongNotesIndex.includes(index),
-    [wrongNotesIndex]
-  );
-
   return (
     <>
       <p className="exercise__answer-text">Выберите ответ:</p>
@@ -85,8 +75,8 @@ export const NotesList: React.FC<AnswerListProps> = ({
           <li
             key={`answerItem_${index}`}
             className={cn("exercise__answers-list-item", {
-              "list-item_wrong": checkIfWrong(index),
-              "list-item_correct": checkIfCorrect(index),
+              "list-item_wrong": wrongNotesIndex.includes(index),
+              "list-item_correct": correctNotesIndex.includes(index),
             })}
           >
             <button onClick={() => handleNoteClick(index)}>{name}</button>

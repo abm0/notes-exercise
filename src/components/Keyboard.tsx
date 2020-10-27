@@ -98,16 +98,6 @@ export const Keyboard: React.FC<KeyboardProps> = ({
     ]
   );
 
-  const checkIfCorrect = useCallback(
-    (index: number) => correctNotesIndex.includes(index),
-    [correctNotesIndex]
-  );
-
-  const checkIfWrong = useCallback(
-    (index: number) => wrongNotesIndex.includes(index),
-    [wrongNotesIndex]
-  );
-
   return (
     <div className="keyboard__container">
       <ul className="keys-list">
@@ -115,8 +105,8 @@ export const Keyboard: React.FC<KeyboardProps> = ({
           <li
             key={`key-${arrIndex}`}
             className={cn(`keys-list__key_${key.type}`, {
-              key_correct: checkIfCorrect(key.noteIndex),
-              key_wrong: checkIfWrong(key.noteIndex),
+              key_correct: correctNotesIndex.includes(key.noteIndex),
+              key_wrong: wrongNotesIndex.includes(key.noteIndex),
             })}
             onClick={() => handleNoteClick(key.noteIndex)}
           />

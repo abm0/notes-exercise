@@ -6,8 +6,8 @@ import { NotesList } from "./NotesList";
 import { Keyboard } from "./Keyboard";
 import { Fretboard } from "./Fretboard";
 
-const notesRus = ["До", "Ре", "Ми", "Фа", "Соль", "Ля", "Си"];
-const notesEng = ["C", "D", "E", "F", "G", "A", "B"];
+import notesRus from "../data/notesRus.json";
+import notesEng from "../data/notesEng.json";
 
 const bothNotes = notesRus.map((note, index) => `${notesEng[index]} (${note})`);
 
@@ -38,8 +38,6 @@ export const Exercise = React.memo(() => {
   const [answerNotes, setAnswerNotes] = useState<string[]>(notesEng);
   const [activeNoteIndex, setActiveNoteIndex] = useState<number>(0);
   const [previousNoteIndex, setPreviousNoteIndex] = useState<number>();
-
-  console.log("activeNoteIndex: ", activeNoteIndex);
 
   useEffect(() => {
     switch (mode) {
@@ -87,7 +85,12 @@ export const Exercise = React.memo(() => {
         );
 
       case FRETBOARD:
-        return <Fretboard />;
+        return (
+          <Fretboard
+            activeNoteIndex={activeNoteIndex}
+            proceedToNextNote={proceedToNextNote}
+          />
+        );
     }
   }, [
     mode,
