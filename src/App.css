@@ -32,6 +32,59 @@ body {
 
 }
 
+.keys-list {
+  list-style: none;
+  padding: 0;
+  position: relative;
+  border-top: 2px solid #000;
+}
+
+.keys-list__key_white,
+.keys-list__key_black {
+  display: inline-block;
+  vertical-align: top;
+  border-color: #efefef;
+  border-width: 0px 2px 2px 2px;
+  border-style: solid;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.keys-list__key_white {
+  background-color: white;
+  height: 200px;
+  width: 35px;
+}
+
+.keys-list__key_white:active {
+  background-color: #efefef;
+}
+
+.keys-list__key_black {
+  background-color: black;
+  height: 120px;
+  width: 20px;
+  border-color: black;
+  position: absolute;
+  top: 0;
+  left: auto;
+  margin-left: -11px;
+}
+
+.keys-list__key_black:active {
+  background-color: #303030;
+}
+
+.key_wrong {
+  background-color: palevioletred;
+}
+
+.key_correct {
+  background-color: palegreen;
+}
+
+
 .fretboard__container {
   
 }
+

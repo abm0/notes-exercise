@@ -67,14 +67,14 @@ export const NotesList: React.FC<AnswerListProps> = ({
     ]
   );
 
-  const checkIfWrong = useCallback(
-    (index: number) => wrongNotesIndex.includes(index),
-    [wrongNotesIndex]
-  );
-
   const checkIfCorrect = useCallback(
     (index: number) => correctNotesIndex.includes(index),
     [correctNotesIndex]
+  );
+
+  const checkIfWrong = useCallback(
+    (index: number) => wrongNotesIndex.includes(index),
+    [wrongNotesIndex]
   );
 
   return (

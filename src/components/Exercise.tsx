@@ -39,8 +39,7 @@ export const Exercise = React.memo(() => {
   const [activeNoteIndex, setActiveNoteIndex] = useState<number>(0);
   const [previousNoteIndex, setPreviousNoteIndex] = useState<number>();
 
-  // console.table({ previousNoteIndex, activeNoteIndex });
-  console.log("Exercise render");
+  console.log("activeNoteIndex: ", activeNoteIndex);
 
   useEffect(() => {
     switch (mode) {
@@ -80,7 +79,12 @@ export const Exercise = React.memo(() => {
         );
 
       case KEYBOARD:
-        return <Keyboard />;
+        return (
+          <Keyboard
+            activeNoteIndex={activeNoteIndex}
+            proceedToNextNote={proceedToNextNote}
+          />
+        );
 
       case FRETBOARD:
         return <Fretboard />;
